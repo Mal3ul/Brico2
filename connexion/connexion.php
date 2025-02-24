@@ -32,12 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Connexion</title>
-</head>
-<body>
+
     <h2>Connexion</h2>
     <form method="POST">
         <label for="username">Nom d'utilisateur :</label><br>
@@ -47,5 +42,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         <input type="submit" name="login" value="Se connecter">
         <a href="inscription.php">Inscription</a>
     </form>
-</body>
+
 </html>

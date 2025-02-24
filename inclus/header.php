@@ -67,13 +67,16 @@ include_once('../inclus/footer.php');
             <?php endif; ?>
                 <?php if (isset($_SESSION['profil'])) : ?>
             <li class="nav-item mr-4">
-                <a class="nav-link" href="../Connexion/deconnexion.php">Déconnexion</a>
+                <a class="nav-link" href="../connexion/deconnexion.php">Déconnexion</a>
             </li>
                 <?php else : ?>
             <li class="nav-item mr-4">
-                <a class="nav-link" href="../Connexion/connexion.php">Connexion</a>
+                <a class="nav-link" href="../connexion/connexion.php">Connexion</a>
             </li>
                 <?php endif; ?>
+            <li class="nav-item <?php echo ($currentPage == 'contact.php') ? 'active' : ''; ?> mr-4">
+                <a class="nav-link" href="../contact/contact.php">Contact</a>
+            </li>
         </ul>
     </div>
 </nav>
