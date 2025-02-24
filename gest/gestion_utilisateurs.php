@@ -1,4 +1,7 @@
 <?php
+// Page de gestion des utilisateurs pour les gestionnaires et les admins
+// Permet de supprimer, modifier et changer le rôle des utilisateurs
+
 include_once('../inclus/header.php');
 include_once('../panier/fonctions.php');
 

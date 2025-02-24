@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $password = $_POST['password'];
 
     try {
-        $connexion = getDbConnection(); // Obtenez la connexion PDO
+        $connexion = getDbConnection(); // Connexion PDO
 
         $stmt = $connexion->prepare("SELECT * FROM users WHERE username = :username");
         $stmt->execute([':username' => $username]);
