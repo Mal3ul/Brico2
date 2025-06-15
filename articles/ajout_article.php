@@ -29,5 +29,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $type = 'ajouter';
 $article = null;
 include_once('form.php');
-include_once('../inclus/footer.php');
+// include_once('../inclus/footer.php');
 ?>

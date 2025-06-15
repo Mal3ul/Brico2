@@ -10,10 +10,9 @@
 //     header('Location: ../index.php');
 //     exit();
 // }
+$type = isset($type) ? $type : 'ajouter';
 $titre = isset($article) ? "Modifier un article" : "Ajouter un article";
 include_once('../inclus/header.php');
-include_once('ajout_article.php');
-include_once('modification_article.php');
 
 $id = isset($article['idarticles']) ? $article['idarticles'] : '';
 $nom = isset($article['nom']) ? $article['nom'] : '';
@@ -23,13 +22,13 @@ $tva = isset($article['tva']) ? $article['tva'] : '';
 $promo = isset($article['promo']) ? $article['promo'] : '';
 $new = isset($article['new']) ? $article['new'] : '';
 
-$type = isset($type) ? $type : 'ajouter';
+echo $type;
 ?>
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+            <form action="<?php echo $type === 'modifier' ? 'modification_article.php' : 'ajout_article.php'; ?>" method="post">
                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom :</label>
@@ -49,7 +48,7 @@ $type = isset($type) ? $type : 'ajouter';
                 </div>
                 <div class="mb-3">
                     <label for="promo" class="form-label">Promotion :</label>
-                    <input type="text" class="form-control" name="promo" value="<?php echo htmlspecialchars($promo); ?>">
+                    <input type="text" class="form-control" name="promo" value="<?php echo htmlspecialchars($promo ?: ''); ?>">
                 </div>
                 <div class="mb-3">
                     <label for="new" class="form-label">Nouveauté :</label>

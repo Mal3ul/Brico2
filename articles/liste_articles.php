@@ -19,7 +19,7 @@ try {
         <a href="ajout_article.php">Ajouter un article</a><br><br>
     <?php endif; ?>
 
-    <table border="1">
+    <table class="table table-striped table-sm" border="1">
         <tr>
             <th>Nom</th>
             <th>Référence</th>
@@ -55,7 +55,7 @@ try {
                 <?php if(isset($_SESSION['profil']) && ($_SESSION['profil'] === 'admin') |  ($_SESSION['profil'] === 'gest')): ?>
 
                 <td>
-                    <a href="form.php?id=<?= $article['idarticles'] ?>">Modifier</a> | 
+                    <a href="modification_article.php?id=<?= $article['idarticles'] ?>">Modifier</a> | 
                     <a href="suppression_article.php?id=<?= $article['idarticles'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer</a>
                 </td>
                 <?php else : ?>

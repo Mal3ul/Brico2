@@ -2,6 +2,7 @@
 $titre = "Modifier un article";
 include_once('../inclus/header.php');
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
     
     try {

@@ -1,5 +1,5 @@
 <?php
-include_once('../inclus/header.php');
+// include_once('../inclus/header.php');
 
 if (isset($_GET['id'])) {
     try {

@@ -1,11 +1,11 @@
 <?php
 function ajouter_au_panier($article, $quantite) {
-    if (isset($_SESSION['user_id'])) {
+    if (isset($_SESSION['user_id'])) { //* Vérifie si l'utilisateur est connecté
         $user_id = $_SESSION['user_id'];
         try {
-            $connexion = getDbConnection(); // Obtenez la connexion PDO
+            $connexion = getDbConnection();
 
-            // Vérifier si l'article est déjà dans le panier
+            // Vérifie si l'article est déjà dans le panier
             $stmt = $connexion->prepare("SELECT quantite FROM panier WHERE user_id = :user_id AND article_ref = :article_ref");
             $stmt->execute([':user_id' => $user_id, ':article_ref' => $article]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -218,7 +218,7 @@ function vider_panier_bdd($user_id) {
         echo "Erreur lors de la vidange du panier : " . $e->getMessage();
     }
 }
-// 
+
 function obtenir_tous_les_utilisateurs($exclure_admins = false) {
     try {
         $connexion = getDbConnection();
@@ -236,6 +236,8 @@ function obtenir_tous_les_utilisateurs($exclure_admins = false) {
 }
 
 // Fonction pour supprimer un utilisateur, son panier et ses commandes
+
+//! Commandes et panier ->  
 function supprimer_utilisateur_et_ses_donnees($user_id) {
     try {
         $connexion = getDbConnection();
